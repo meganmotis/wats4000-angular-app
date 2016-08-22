@@ -16,9 +16,8 @@ angular.module('wats4000AngularAppApp')
     return $resource('http://api.openweathermap.org/data/2.5/weather?q=:location&units=imperial&APPID=e4ee4b46e97613602c84924cc1b9f629', {}, {
       query: {
         method: 'GET',
-	params: {
-	  location: 'Seattle,us',
-	  bogus: null
+	params:{
+	  location: 'Seattle,us'
 	},
 	isArray:false
       }

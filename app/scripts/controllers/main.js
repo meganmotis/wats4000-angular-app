@@ -8,8 +8,9 @@
  * Controller of the wats4000AngularAppApp
  */
 angular.module('wats4000AngularAppApp')
- .controller('MainCtrl', function ($scope, citysearch) {
+ .controller('MainCtrl', function ($scope, citysearch, $localStorage) {
     $scope.citiesFound = citysearch.find();
+    $scope.storage = $localStorage;
 
     $scope.findCities = function(){
         $scope.citiesFound = citysearch.find({

@@ -13,6 +13,7 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  background-image: url("../images/weather.png");
 }
 
 ul {
@@ -31,6 +32,7 @@ ul {
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
+  opacity: 0.5;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -56,6 +58,7 @@ ul {
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
+  background: rgba(230,230,230,0.2);
 }
 
   .btn {

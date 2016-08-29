@@ -2,7 +2,7 @@
 
   <h1>Weather Cats</h1>
   <img class=img-responsive src="images/home-cat.jpg" alt="cat looking out the window">
-  <h2>Enter a Location</h2>
+  <h3>Enter a Location</h3>
   <p class="lead">
     <div ng-init="location='Seattle'">
         <p>
@@ -21,15 +21,15 @@
         <dd>{{city.weather[0].main}} - {{city.weather[0].description}}</dd>
         <dt>Temperature</dt>
         <dd>{{city.main.temp}} &deg;F</dd>
-        <dd><a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">How's the Weather?</a></dd>
+        <dd><a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">How's the Weather?</a></dd>
       </dl>
     </div>
 
     <div ng-if="storage.savedCities">
-      <h2>Saved Cities</h2>
+      <h3>Saved Cities</h3>
       <ul class="saved-cities-list">
         <li ng-repeat="city in storage.savedCities">
-          <a ng-href="/#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
+          <a ng-href="#/current/{{city.id}}" class="btn btn-lg btn-primary">{{city.name}}</a>
         </li>
       </ul>
     </div>

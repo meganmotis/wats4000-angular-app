@@ -23,7 +23,6 @@ angular.module('wats4000AngularAppApp')
     if (!$localStorage.savedCities){
         $localStorage.savedCities = [cityData];
     } else {
-        // We have already saved some cities.
         // Check to make sure we haven't already saved the current city.
         var save = true; // Initialize the save decision variable.
         // Use this loop to check if we've already saved the city.
@@ -35,8 +34,16 @@ angular.module('wats4000AngularAppApp')
         }
         if (save==true){
             $localStorage.savedCities.push(cityData);
+            // Add object to trigger messages
+            $scope.citySaved = {
+              'success': true
+            };
         } else {
             console.log('city already saved');
+            // Add object to trigger messages
+            $scope.citySaved ={
+              'duplicate': true
+            };
         }
     }
    };

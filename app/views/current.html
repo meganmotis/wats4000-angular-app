@@ -1,5 +1,14 @@
 <h1>Current Conditions for {{currentWeather.name}}</h1>
 
+<div ng-messages="citySaved">
+    <p class="city-saved-alert bg-success text-success" ng-message="success">
+        {{currentWeather.name}} has been saved to your list of cities.
+    </p>
+    <p class="city-saved-alert bg-warning text-warning" ng-message="duplicate">
+        {{currentWeather.name}} has already been saved to your list of cities.
+    </p>
+</div>
+
 <dl>
     <dt>Currently</dt>
     <dd>{{currentWeather.weather[0].main}}</dd>

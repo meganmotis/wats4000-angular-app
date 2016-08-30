@@ -1,11 +1,21 @@
-<h1>5-Day Forecast for {{forecastData.city.name}} {{forecastData.city.country}}</h1>
+<h1>5-Day Forecast for {{forecastData.city.name}}, {{forecastData.city.country}}</h1>
 <dl ng-repeat="prediction in forecastData.list" class="weather-forecast">
-    <dt>Forecast for {{prediction.dt*1000 | date:'MMM dd, yyyy'}}</dt>
-    <dd>{{prediction.weather[0].main}}</dd>
-    <!-- <dd ng-if="prediction.weather[0].main='sunny'"><img src="images/sunnycat.jpg></dd> -->
-    <dd>{{prediction.weather[0].description}}</dd>
-    <dt>Temperature</dt>
-    <dd>Min: {{prediction.temp.min}} &deg;F Max: {{prediction.temp.max}} &deg;F</dd>
+    <dt>Forecast for {{prediction.dt*1000 | date:'MMM dd, yyyy'}}:</dt>
+    <dd>{{prediction.weather[0].main}} &#124; {{prediction.weather[0].description}}</dd>
+    <img ng-src="http://openweathermap.org/img/w/{{prediction.weather[0].icon}}.png">
+    <dd ng-if="{{prediction.weather[0].main}}='Thunderstorm'"><img class=img-responsive src="images/storm-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Drizzle'"><img class=img-responsive src="images/drizzle-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Rain'"><img class=img-responsive src="images/rain-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Snow'"><img class=img-responsive src="images/snow-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Atmosphere'"><img class=img-responsive src="images/home-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Clear'"><img class=img-responsive src="images/clearskies-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Clouds'"><img class=img-responsive src="images/cloud-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Sun'"><img class=img-responsive src="images/sunny-cat.png"></dd>
+    <dd ng-if="{{prediction.weather[0].main}}='Extreme'"><img class=img-responsive src="images/storm-cat.png"></dd>
+    <dt>Temperature:</dt>
+    <dd>Max: {{prediction.temp.max}}&deg;F &#124; Min: {{prediction.temp.min}}&deg;F</dd>
+    <dt>Humidity:</dt>
+    <dd>{{prediction.humidity}}&#37;</dd>
     <hr>
 </dl>
 
